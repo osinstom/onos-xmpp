@@ -1,0 +1,30 @@
+BUNDLES = [
+    '//apps/pubsub:onos-apps-pubsub',
+    '//providers/xmpp/pubsub:onos-providers-xmpp-pubsub',
+    '//providers/xmpp/device:onos-providers-xmpp-device',
+    '//protocols/xmpp/api:onos-protocols-xmpp-api',
+    '//protocols/xmpp/ctl:onos-protocols-xmpp-ctl',
+    '//lib:netty-buffer',
+    '//lib:netty-codec-xml',
+    '//lib:netty-codec',
+    '//lib:netty-transport',
+    '//lib:netty-transport-native-epoll',
+    '//lib:netty-handler',
+    '//lib:netty-resolver',
+    '//lib:tinder-xmpp',
+    '//lib:stax2-api',
+    '//lib:aalto-xml',
+    '//lib:concurrent-hashmap',
+    '//lib:gnu-idn',
+#     '//lib:org.dom4j',
+    '//lib:org.apache.servicemix.bundles.dom4j',
+]
+
+onos_app (
+    app_name = 'org.onosproject.xmpp',
+    title = 'XMPP Provider',
+    category = 'Provider',
+    url = 'http://onosproject.org',
+    included_bundles = BUNDLES,
+    description = 'XMPP protocol southbound providers.',
+)

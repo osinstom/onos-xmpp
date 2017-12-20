@@ -1,0 +1,25 @@
+COMPILE_DEPS = [
+    '//lib:CORE_DEPS',
+    '//lib:org.apache.karaf.shell.console',
+    '//cli:onos-cli',
+    '//core/api:onos-api',
+    '//apps/pubsub:onos-apps-pubsub',
+]
+
+osgi_jar_with_tests(
+    deps = COMPILE_DEPS,
+)
+
+BUNDLES = [
+    '//apps/pubsub:onos-apps-pubsub',
+    '//apps/contrail-poc:onos-apps-contrail-poc',
+]
+
+onos_app (
+    app_name = 'org.onosproject.contrail-poc',
+    title = 'OpenContrail Networking PoC',
+    category = 'PoC',
+    url = 'http://onosproject.org',
+    included_bundles = BUNDLES,
+    description = 'OpenContrail Networking Proof of Concept application.',
+)
